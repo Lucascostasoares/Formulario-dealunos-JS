@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css'
 
 class Alunos extends React.Component {
     constructor(props) {
@@ -55,11 +56,38 @@ class Alunos extends React.Component {
         }
 
     }
+
+    // listarAlunos = () => {
+    //     this.state.alunos.map(nome => {
+    //         console.log(alunos.nome);
+    //     })
+    //     this.state.alunos.map(alunos => {
+    //         if(alunos.idade > 30) {
+    //             console.log(alunos.nome)
+    //         }
+    //     })
+    //     this.state.alunos.filter(alunos => 
+    //         alunos.idade > 30
+    //         && alunos.idade < 70
+    //         && console.log('filter',alunos.nome))
+    //        }
+           
+
     render(){
         return (
-            <div>
-                <button>AODs fhsn</button>
-            </div>
+            <div className='form'>
+
+                {/* <button> onCLick={this.listaAlunos}>Click me</button> */}
+                {this.state.alunos.map((alunos, index) => {
+                    console.log(alunos.nome);
+                    return (
+                        <div className='imagem' key={index}>
+                            <h1>{alunos.nome}</h1>
+                            <p>alunos.idade</p>
+                        </div>
+                    )
+                })}
+            </div>    
         )
     }
 }
